@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Puedo jubilarme?</title>
+</head>
+
+<body>
+
+    <h1>¿Puedo jubilarme?</h1>
+
+    <p>Ingresá tus datos para saber si estás en edad de jubilarte.</p>
+
+    <button onclick="verificarJubilacion()">Consultar</button>
+
+    <script>
+
+        function verificarJubilacion() {
+
+            // Pedimos la edad
+            let edad = Number(prompt("¿Cuántos años tenés?"));
+
+            // Pedimos el género
+            let genero = prompt("¿Sos hombre o mujer? Escribí hombre o mujer.").toLowerCase();
+
+            // Comprobamos si es mujer
+            if (genero === "mujer") {
+
+                if (edad >= 60) {
+                    alert("¡Ya estás en edad de jubilarte!");
+                } else {
+                    alert("Todavía no estás en edad de jubilarte.");
+                }
+
+            }
+
+            // Comprobamos si es hombre
+            if (genero === "hombre") {
+
+                if (edad >= 65) {
+                    alert("¡Ya estás en edad de jubilarte!");
+                } else {
+                    alert("Todavía no estás en edad de jubilarte.");
+                }
+
+            }
+
+            // Si escribe otra cosa
+            if (genero !== "hombre" && genero !== "mujer") {
+                alert("Por favor, ingresá hombre o mujer.");
+            }
+
+            // Comprobamos que la edad sea válida
+            if (edad < 0 || isNaN(edad)) {
+                alert("Ingresá una edad válida.");
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
